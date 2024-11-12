@@ -7,19 +7,16 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Files\" />
+        <PackageReference Include="Bitwarden.Sdk" Version="0.0.1-alpha"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9"/>
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Bitwarden.Sdk" Version="0.0.1-alpha" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
-        <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Update="appsettings.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
+      <None Remove="Files\settings.csv" />
+      <EmbeddedResource Include="Files\settings.csv">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
     </ItemGroup>
 
 </Project>

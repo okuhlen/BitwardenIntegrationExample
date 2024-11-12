@@ -15,7 +15,10 @@ public sealed class SettingsManager(ISecretManager secretManager) : ISettingsMan
     };
     public async Task LoadSecrets()
     {
-        using var reader = new StreamReader($"{Directory.GetCurrentDirectory()}/Files/settings.csv");
+        var applicationAssembly = typeof(SecretManager).Assembly;
+        var applicationDirectory = applicationAssembly.GetFiles()[0];
+        
+        using var reader = new StreamReader(applicationDirectory);
         using var csvReader = new CsvReader(reader, _csvConfiguration);
 
         await foreach (var row in csvReader.GetRecordsAsync<SettingRow>())
