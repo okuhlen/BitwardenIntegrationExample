@@ -13,12 +13,24 @@ public sealed class SettingsManager(ISecretManager secretManager) : ISettingsMan
         HasHeaderRecord = true,
         Delimiter = ","
     };
+    
     public async Task LoadSecrets()
     {
-        var applicationAssembly = typeof(SecretManager).Assembly;
-        var applicationDirectory = applicationAssembly.GetFiles()[0];
-        
-        using var reader = new StreamReader(applicationDirectory);
+        var assembly = typeof(SecretManager).Assembly;
+        var resourceName = assembly.GetManifestResourceNames().FirstOrDefault(name => name.EndsWith("settings.csv"));
+
+        if (resourceName is null)
+        {
+            throw new Exception("No settings.csv file was found as an embedded resource.");
+        }
+
+        using var stream = assembly.GetManifestResourceStream(resourceName);
+        if (stream is null)
+        {
+            throw new Exception("Failed to load the embedded resource stream for settings.csv.");
+        }
+
+        using var reader = new StreamReader(stream);
         using var csvReader = new CsvReader(reader, _csvConfiguration);
 
         await foreach (var row in csvReader.GetRecordsAsync<SettingRow>())

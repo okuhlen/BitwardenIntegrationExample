@@ -9,6 +9,12 @@ public sealed class SecretManager(IOptions<BitwardenSecretsConfiguration> secret
     private readonly BitwardenSecretsConfiguration _secretsConfiguration = secretsConfiguration.Value;
     private const string DefaultNote = "No notes were supplied";
 
+    /// <summary>
+    /// Load a single secret into the secrets manager
+    /// </summary>
+    /// <param name="key">Your unique key to identify the secret</param>
+    /// <param name="value">THe secret value</param>
+    /// <param name="note">Any notes you would like to add alongside the secret. DEFAULTS TO: No notes were supplied</param>
     public void LoadSecret(string key, string value, string? note)
     {
         using var bitwardenClient = new BitwardenClient(new());
