@@ -29,42 +29,18 @@ Please ensure you have an existing Bitwarden account to make use of the secret m
 * Run the SettingsLoader console application. Ensure that the settings.csv file is present, and has all the values you wish to load into the secret manager service.
 * After runing the SettingsLoader, you can run the SampleWebApi application to verify the secrets are loaded
 
-```
-code blocks for commands
-```
+## Keeping in touch with the Author
 
-## Help
+This example was written by Okuhle Ngada. You can find me on the following platforms.
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
-
-## Authors
-
-Contributors names and contact info
-
-Okuhle Ngada
+* Threads.net
 [@okuhle.ngada (on threads.net)](https://www.threads.net/@okuhle.ngada?invite=0)
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
+* Instagram [@okuhle.ngada on instagram](https://www.instagram.com/okuhle.ngada/)
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is released under the [Creative Commons 4.0 CC BY license](https://creativecommons.org/licenses/by/4.0/) license.
 
 ## Acknowledgments
 
-I would like to thank Bitwarden for creating such an awesome SDK. 
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+I would like to thank Bitwarden for creating such an awesome SDK. Though in BETA at the time of writing, it nevertheless still is cool. 
