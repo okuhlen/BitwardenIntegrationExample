@@ -7,7 +7,7 @@ This project represents a simple example of how to use the Bitwarden Secret Mana
 This solution shows how Bitwarden Secret Manager can be used to store and manage secrets. To illustrate this, the solution has the following projects:
 
 * SettingsLoader: This project is responsible for loading settings into the Bitwarden Secret Manager. This is done by reading a CSV file and loading the settings into the Secret Manager. In a real world scenario, the process may differ.
-* SampleWebApi: This project is a sample web api project that uses the Bitwarden Secret Manager to retrieve and use secrets. In a real-world scenario, this could be classic a classic backend or a more sophisticated Web API. For simplicity, API security practises were excluded.
+* SampleWebApi: This project is a sample web api project that uses the Bitwarden Secret Manager to retrieve and use secrets. In a real-world scenario, this could be a classic backend or a more sophisticated Web API. For simplicity, API security practises were excluded.
 * Tests: This project contains a unit test for integration of the Secret Manager. This is an idea of how one could write tests against the integration.
 * ApplicationUtilities: This project contains the domain models and services that are responsible for the Secret Manager.
 
@@ -36,6 +36,9 @@ This example was written by Okuhle Ngada. You can find me on the following platf
 * Threads.net
 [@okuhle.ngada (on threads.net)](https://www.threads.net/@okuhle.ngada?invite=0)
 * Instagram [@okuhle.ngada on instagram](https://www.instagram.com/okuhle.ngada/)
+
+# Want to show your support?
+If you would like to show your support, please consider [buying me a coffee](https://www.buymeacoffee.com/okuhlengado) :-)
 
 ## License
 
