@@ -33,7 +33,7 @@ public sealed class SampleController(ISecretManager settingsManager,
     /// This is a sample action that creates a new secret in the secret manager
     /// </summary>
     /// <param name="model"></param>
-    /// <returns>HTTP status 201 if successful</returns>
+    /// <returns>HTTP status 204 if successful</returns>
     [HttpPost]
     public IActionResult Create([FromBody] NewSetting model)
     {
