@@ -1,12 +1,17 @@
+using ApplicationUtilities.Configuration;
 using ApplicationUtilities.Services;
 using SampleWebApi.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddBitwardenSecretManagerConfiguration();
 
+//if you continue to use the Options pattern, you may register other strongly-typed configurations here
+builder.Services.Configure<MyOtherConfiguration>(builder.Configuration.GetSection(nameof(MyOtherConfiguration)));
+builder.Services.Configure<BitwardenSecretsConfiguration>(builder.Configuration.GetSection(nameof(BitwardenSecretsConfiguration)));
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddControllers();
 builder.Services.AddTransient<ISecretManager, SecretManager>();
 
 var app = builder.Build();
